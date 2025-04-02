@@ -1,61 +1,54 @@
 { "input": { "workflow": { "1": { "inputs": { "garment_description": "", "negative_prompt": "", "width": 768, "height": 1024, 
-          "num_inference_steps": 30, "guidance_scale": 2, "strength": 1, "seed": 743656401595435, "pipeline": [
-            "2", 0 ], "human_img": [ "4", 0 ], "pose_img": [ "5", 0 ], "mask_img": [ "13", 0 ], "garment_img": [ "12", 0 ]
-        },
-        "class_type": "IDM-VTON", "_meta": { "title": "Run IDM-VTON Inference"
-        }
-      },
-      "2": { "inputs": { "weight_dtype": "float16"
-        },
-        "class_type": "PipelineLoader", "_meta": { "title": "Load IDM-VTON Pipeline"
-        }
-      },
-      "3": { "inputs": { "images": [ "1", 0 ]
-        },
-        "class_type": "PreviewImage", "_meta": { "title": "Preview Image"
-        }
-      },
-      "4": { "inputs": { "image": "human_1_check_13_20250131114128_idm_vton.jpg"
-        },
-        "class_type": "LoadImage", "_meta": { "title": "Load Image"
-        }
-      },
-      "5": { "inputs": { "model": "densepose_r50_fpn_dl.torchscript", "cmap": "Viridis (MagicAnimate)", "resolution": 768, "image": [ "4", 
-            0
-          ]
-        },
-        "class_type": "DensePosePreprocessor", "_meta": { "title": "DensePose Estimator"
-        }
-      },
-      "12": { "inputs": { "image": "cloth_18_jumpsuit_check_5_20250131114125_idm_vton.jpg"
-        },
-        "class_type": "LoadImage", "_meta": { "title": "Load Image"
-        }
-      },
-      "13": { "inputs": { "cloth_type": "upper", "pipe": [ "14", 0 ], "target_image": [ "4", 0 ]
-        },
-        "class_type": "AutoMasker", "_meta": { "title": "Auto Mask Generation"
-        }
-      },
-      "14": { "inputs": { "catvton_path": "zhengchong/CatVTON"
-        },
-        "class_type": "LoadAutoMasker", "_meta": { "title": "Load AutoMask Generator"
-        }
-      },
-      "15": { "inputs": { "filename_prefix": "ComfyUI", "images": [ "1", 0 ]
-        },
-        "class_type": "SaveImage", "_meta": { "title": "Save Image"
-        }
-      },
-      "17": { "inputs": { "images": [ "13", 0 ]
-        },
-        "class_type": "PreviewImage", "_meta": { "title": "Preview Image"
-        }
-      }
+      "num_inference_steps": 30, "guidance_scale": 2, "strength": 1, "seed": 212186121862115, "pipeline": [
+        "2", 0 ], "human_img": [ "4", 0 ], "pose_img": [ "5", 0 ], "mask_img": [ "14", 0 ], "garment_img": [ "12", 0 ]
     },
-    "images": [ { "name": "1.png", "image": "https://virtualtryonyoso.s3.eu-north-1.amazonaws.com/yoso12/_20250227083725_idm_vton.jpg"
+    "class_type": "IDM-VTON", "_meta": { "title": "Run IDM-VTON Inference"
+    }
+  },
+  "2": { "inputs": { "weight_dtype": "float16"
+    },
+    "class_type": "PipelineLoader", "_meta": { "title": "Load IDM-VTON Pipeline"
+    }
+  },
+  "4": { "inputs": { "image": "4.png"
+    },
+    "class_type": "LoadImage", "_meta": { "title": "Load Image"
+    }
+  },
+  "5": { "inputs": { "model": "densepose_r50_fpn_dl.torchscript", "cmap": "Viridis (MagicAnimate)", "resolution": 768, "image": [ "4", 0 ]
+    },
+    "class_type": "DensePosePreprocessor", "_meta": { "title": "DensePose Estimator"
+    }
+  },
+  "12": { "inputs": { "image": "3.png"
+    },
+    "class_type": "LoadImage", "_meta": { "title": "Load Image"
+    }
+  },
+  "13": { "inputs": { "catvton_path": "zhengchong/CatVTON"
+    },
+    "class_type": "LoadAutoMasker", "_meta": { "title": "Load AutoMask Generator"
+    }
+  },
+  "14": { "inputs": { "cloth_type": "overall", "pipe": [ "13", 0 ], "target_image": [ "4", 0 ]
+    },
+    "class_type": "AutoMasker", "_meta": { "title": "Auto Mask Generation"
+    }
+  },
+  "15": { "inputs": { "filename_prefix": "ComfyUI", "images": [ "1", 0 ]
+    },
+    "class_type": "SaveImage", "_meta": { "title": "Save Image"
+       }
+  },
+  "16": { "inputs": { "filename_prefix": "ComfyUI", "images": [ "14", 0 ]
+    },
+    "class_type": "SaveImage", "_meta": { "title": "Save Image"
+    }
+  }
+}
+, "images": [ { "name": "3.png", "image": "https://virtualtryonyoso.s3.eu-north-1.amazonaws.com/yoso12/_20250227083725_idm_vton.jpg"
       },
-      { "name": "2.png", "image": "https://virtualtryonyoso.s3.eu-north-1.amazonaws.com/yoso12/_20250129111437_idm_vton.jpg"
+      { "name": "4.png", "image": "https://virtualtryonyoso.s3.eu-north-1.amazonaws.com/base64+alia+bbhatt.png"
       }
     ]
   }
